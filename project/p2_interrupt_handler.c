@@ -1,5 +1,7 @@
 #include <msp430.h>
 #include "switches.h"
+#include "led.h"
+#include "stateMachine.h"
 
 void
 __interrupt_vec(PORT2_VECTOR) Port_2(){
@@ -8,4 +10,9 @@ __interrupt_vec(PORT2_VECTOR) Port_2(){
     switch_interrupt_handler();	/* single handler for all switches */
   }
 }
+
+/* void */
+/* __interrupt_vec(WDT_VECTOR) WDT() { */
+/*   stateMachine(); */
+/* } */
 
